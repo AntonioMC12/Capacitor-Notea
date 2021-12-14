@@ -1,17 +1,23 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Tab 2
+      {{'NEW NOTE' | translate | titlecase}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <form [formGroup]="formNota" (ngSubmit)="addNote()">
+    <ion-item>
+      <ion-label>Título:</ion-label>
+      <ion-input type="text" formControlName="tittle"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Descripción:</ion-label>
+      <ion-textarea formControlName="description"></ion-textarea>
+    </ion-item>
+    <ion-button expand="full" color="primary" type="Submit"  [disabled]="!formNota.valid">Agregar</ion-button>
+  </form>
+  <ion-button (click)="speak()" expand="block" shape="round" [disabled]="startButton"><ion-icon name="mic-outline"></ion-icon></ion-button>
+  <ion-button (click)="stop()" expand="block" shape="round"  [disabled]="stopButton"><ion-icon name="mic-off-outline"></ion-icon></ion-button>
 </ion-content>

@@ -1,3 +1,26 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu contentId="menu-content" menuId="menu-content" side="start">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <label>ES </label><ion-toggle id="languaje" color="primary" (ionChange)=cambiaIdioma($event) #mitoggle></ion-toggle><label> EN</label>
+          <label>&nbsp; Elije el Idioma</label>
+        </ion-item>
+        <ion-item>
+          <ion-buttons slot="start">
+            <ion-button (click)="this.authS.logout()">
+              <ion-icon slot="start" name="power"></ion-icon>
+              Cerrar Sesión
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="menu-content"></ion-router-outlet>
 </ion-app>
