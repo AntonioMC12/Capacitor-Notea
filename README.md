@@ -1,5 +1,7 @@
 # [Notea] Wiki
 
+Link to the PWA: [Notea Link](https://notea-94989.web.app)
+
 This is the wiki for my Notea project. This is my first project with Ionic and Capacitor so, it may contents many errors and the code is not clean, but i'll update this project in the future, due to the project delivery date.
 
 The structure of the repository is as shown below:
